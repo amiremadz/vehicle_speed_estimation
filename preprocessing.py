@@ -70,16 +70,16 @@ y_test  = y[test_mask]
 print("\nWriting X-train to HDF5...")
 hdf5_manip = MyHDF5()
 
-hdf5_manip.outfile = os.path.join(out_path, "X_train.hdf5")
+hdf5_manip.hfile = os.path.join(out_path, "X_train.hdf5")
 hdf5_manip.write(X_train)
 
-hdf5_manip.outfile = os.path.join(out_path, "X_test.hdf5")
+hdf5_manip.hfile = os.path.join(out_path, "X_test.hdf5")
 hdf5_manip.write(X_test)
 
-hdf5_manip.outfile = os.path.join(out_path, "y_train.hdf5")
+hdf5_manip.hfile = os.path.join(out_path, "y_train.hdf5")
 hdf5_manip.write(y_train)
 
-hdf5_manip.outfile = os.path.join(out_path, "y_test.hdf5")
+hdf5_manip.hfile = os.path.join(out_path, "y_test.hdf5")
 hdf5_manip.write(y_test)
 
 print("\n Done!")
