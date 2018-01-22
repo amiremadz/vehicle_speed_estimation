@@ -1,3 +1,3 @@
-ffmpeg train.mp4 -r 20 './frames/img%04d.jpg'
+ffmpeg -i train.mp4 -r 20 './frames/img%04d.jpg'
 ffprobe -show_frames train.mp4 2>/dev/null | grep '\[FRAME\]' | wc -l
 md5sum train.mp4
