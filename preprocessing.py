@@ -42,18 +42,12 @@ with open(os.path.join(gt_path, "train.txt")) as fh:
 y = [float(val.strip()) for val in y]
 y = np.expand_dims(y, axis=1)
 
-###########
-num_imgs = len(y)
-X = X[:num_imgs]
-###########
-
 # create mask for splitting data
 num_train = int(0.9 * num_imgs)
 num_test  = num_imgs - num_train
 
 train_mask = np.arange(num_train)
 test_mask  = np.arange(num_train, num_imgs)
-
 
 # Shuffle
 print("\nShuffling the data...")
@@ -65,7 +59,6 @@ X_train = X[train_mask]
 X_test  = X[test_mask]
 y_train = y[train_mask]
 y_test  = y[test_mask]
-
 
 print("\nWriting X-train to HDF5...")
 hdf5_manip = MyHDF5()
